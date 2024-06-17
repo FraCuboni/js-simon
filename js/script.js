@@ -43,13 +43,17 @@ setTimeout(
                 }
 
                 // valuto se l'utente ha vinto o perso
-                let i= 0
+                const correctNumbers=[];
 
-                while(pcNumbers[i]===userNumbers[i] && i<6){
-                    i++;
-                    if(i === 5){
-                        console.log('hai vinto bro')
+                // creo ciclo check correttezza numeri singoli
+                for(let i = 0; i < 5; i++){
+                    if(pcNumbers.includes(userNumbers[i]) && pcNumbers[i]===userNumbers[i]){
+                        correctNumbers.push(userNumbers[i]);
+                        console.log(i+1 + ' numero indovinato')
+                    }else{
+                        console.log(i+1 + ' numero sbagliato')
                     }
+
                 }
 
         
