@@ -11,6 +11,10 @@ const ulContainer = document.querySelector('.casualnumbers');
 // creo degli elementi figli li
 let liElement;
 
+// creo array contenitori array dei numeri del pc e dell'utente
+const pcNumbers=[];
+const userNumbers=[];
+
 // creo un ciclo for per inserire gli elementi li all'interno del ul
 for(let i = 1; i <= 5; i++){
     let liElement= document.createElement('li');
@@ -19,14 +23,37 @@ for(let i = 1; i <= 5; i++){
     // inserisco i numeri generati casualmente dentro i li
     let rNumber = generateRandomNumber(1,100);
     liElement.innerHTML= rNumber;
+    // pusho i risultati nell'array
+    pcNumbers.push(rNumber)
 }
 
 // Da lì parte un timer di 30 secondi.
 
-// creo il timer con il prompt
-setTimeout(() => {
-    for (let i = 1; i <= 5; i++){
-        let input= parseInt(prompt('inserisci i numeri che hai letto!'))
+// rendo invisibili i numeri
+setTimeout(
+    function(){
+        ulContainer.classList.add('dnone');
+        
+        // chiedo i numeri all'utente
+        setTimeout(
+            function(){
+                for (let i = 1; i <= 5; i++){
+                    let input= parseInt(prompt('inserisci i numeri che hai letto!'));
+                    userNumbers.push(input);
+                    console.log(input)
+                }
+            }
+            
+        , 1);
     }
     
-}, 10000);
+, 3000);
+
+
+console.log(pcNumbers);
+
+
+    
+
+// creo il timer con il prompt
+
