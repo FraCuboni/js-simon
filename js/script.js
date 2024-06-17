@@ -26,7 +26,7 @@ for(let i = 1; i <= 5; i++){
 // creo il timer con il prompt
 setTimeout(() => {
     for (let i = 1; i <= 5; i++){
-        prompt('inserisci i numeri')
+        let input= parseInt(prompt('inserisci i numeri che hai letto!'))
     }
     
-}, 1000);
+}, 10000);
