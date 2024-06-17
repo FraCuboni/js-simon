@@ -40,8 +40,19 @@ setTimeout(
                 for (let i = 1; i <= 5; i++){
                     let input= parseInt(prompt('inserisci i numeri che hai letto!'));
                     userNumbers.push(input);
-                    console.log(input)
                 }
+
+                // valuto se l'utente ha vinto o perso
+                let i= 0
+
+                while(pcNumbers[i]===userNumbers[i] && i<6){
+                    i++;
+                    if(i === 5){
+                        console.log('hai vinto bro')
+                    }
+                }
+
+        
             }
             
         , 1);
